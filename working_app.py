@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, render_template
 import pickle
 import pandas as pd
 
@@ -24,12 +24,10 @@ def home():
     # Transform the data and predict
     sample_encoded = preprocessor.transform(sample_house)
     predicted_price = model.predict(sample_encoded)
+    price = f"{float(predicted_price[0][0]):,.2f}"
 
-    # Return the prediction in the desired format
-    return jsonify({
-        "message": "House Price Prediction",
-        "predicted_price": float(predicted_price[0][0])
-    })
+    # Render the HTML template
+    return render_template('index.html', price=price)
 
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=5000)

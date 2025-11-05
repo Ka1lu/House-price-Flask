@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🏠 House Price Prediction</h1>
+        
+        <div class="house-details">
+            <h3>House Details:</h3>
+            <div class="detail-row">
+                <span class="detail-label">Area:</span>
+                <span class="detail-value">3000 sq ft</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Bedrooms:</span>
+                <span class="detail-value">4</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Bathrooms:</span>
+                <span class="detail-value">3</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Stories:</span>
+                <span class="detail-value">2</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Main Road:</span>
+                <span class="detail-value">Yes</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Air Conditioning:</span>
+                <span class="detail-value">Yes</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Parking:</span>
+                <span class="detail-value">2 spaces</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Furnishing:</span>
+                <span class="detail-value">Semi-furnished</span>
+            </div>
+        </div>
+        
+        <h2>Predicted Price:</h2>
+        <div class="price">₹{{ price }}</div>
+        
+        <p style="color: #666; margin-top: 30px;">
+            This prediction is based on our machine learning model trained on housing data.
+        </p>
+    </div>
+</body>
+</html>
